@@ -14,11 +14,12 @@ null = standalone value
 undefined
 symbol = most usage in react/figma; uniqueness of something
 object
+undefined
 */
 
 console.log(typeof "123");
 
-//null have object as its type
+//data type of null is object
 console.log(typeof null);
 
 //undefined itself is one kind of type in JS

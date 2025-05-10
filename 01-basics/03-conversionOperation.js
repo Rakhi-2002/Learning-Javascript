@@ -63,7 +63,7 @@ console.log("1" + 2 + 5);
 console.log(1 + 3 + "2");       //Not a good practice in corperate
 console.log(true);
 
-//All below kinds of code is not recommended, not a good practice. Reflects poor readability
+//All below kinds of code is not recommended, not a good practice. Reflects poor code readability
 console.log(+true);
 console.log(+"");
 

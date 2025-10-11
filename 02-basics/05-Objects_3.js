@@ -8,7 +8,7 @@ const course = {
 
 //Cases: when we need to access same key or value multiple/repeated times
 const {courseInstructor: instructor} = course;
-console.log(instructor);            //Output: Hitesh (ordinary way to access properties- object.key)
+console.log(instructor);            //Output: Hitesh (ordinary way to access properties- object.key). Instead of course[courseInstructor], now will use instructor
 
 //----------------- About APIs -------------------------
 //API response in JSON format

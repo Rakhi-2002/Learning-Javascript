@@ -42,6 +42,11 @@ const user = {
 // const promiseOne = new Promise()
 // const date = new Date()
 
+/**
+ * Constructor function below
+ * it acts as a blueprint, used by all the objects. 
+ * These objects will follow the same structure as of given blueprint, along with their unique real/actual values 
+ */
 function user2(username, loginCount, isLoggedIn) {
     this.username = username;
     this.loginCount = loginCount;
@@ -55,6 +60,7 @@ function user2(username, loginCount, isLoggedIn) {
     // return this
 }
 
+//Example - userOne, userTwo follows same structure as of user2, but their actual values differ
 const userOne = new user2("Rakhi", 10, true)
 const userTwo = new user2("Chai aur code", 12, false)
 

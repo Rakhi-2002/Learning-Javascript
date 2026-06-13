@@ -1,3 +1,31 @@
+/**
+ * About call() - built in JS method
+ * It is used to call over a method and set value of 'this'(current context) inside that method which is getting called.
+ * 
+ */
+
+//Example
+
+/*
+function Employee(name) {
+    this.name = name;
+}
+
+function Manager(name, department) {
+    Employee.call(this, name);
+
+    this.department = department;
+}
+
+const manager = new Manager(
+    "Rakhi",
+    "Engineering"
+);
+
+console.log(manager);
+*/
+
+
 function setUserName(username) {
     //complex DB calls
     this.username = username;

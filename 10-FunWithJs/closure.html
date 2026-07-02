@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur Chai</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    function init() {
+        let name = "Mozilla"; 
+        function displayName() {
+            console.log(name); 
+        }
+        displayName();
+    }
+    init();
+
+    function outer(){
+        let username = "RAKHI";
+        function inner(){
+            //Lexical Scoping: username accessible as inner() is declared inside outer() and accessing outer() properties inside only
+            //Note:2 adjacent methods declared in same scope cannot share their own properties with each other
+            //Note: outer() scope cannot access properties from inner()
+            let secretPass = "myPass123";
+            console.log("inner",username);
+        }
+        function innerTwo(){
+            console.log("innerTwo", username);
+            console.log("Password", secretPass);
+        }
+        inner();
+        innerTwo();
+
+    }
+    outer()
+    //below gives Reference error, as username is not accessible outside of above function
+    console.log("TOO OUTER", username);
+</script>
+<script>
+
+    /*
+    Closures in JS
+    - when we are returning displayname in below example, along with displayname, outer function content also getting returned due to Lexical Scoping Concept.
+    - In short, Closure means while returning any function its Lexical scope also will get returned
+    */
+
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+        console.log(name);
+    }
+        return displayName;
+    }
+
+const myFunc = makeFunc();
+myFunc();
+</script>
+<script>
+
+    //------ basic example how to set bg-color  ------
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = 'orange'
+    //     }
+
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`;
+    // }
+
+
+    // Real world example of Lexical Scoping and Closure
+    function clickHandler(color) {
+        //if we just execute below code, it will directly set the backgroundcolor. Instead of waiting for user to click on button
+        // document.body.style.backgroundColor = `${color}`
+
+        //below will have access to color because of Lexical Scope.
+        //Also, while returning below function, clickHandler(color) lexicalscope will also get returned 
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    } 
+
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+</script>
+</html>
